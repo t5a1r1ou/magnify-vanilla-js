@@ -1,0 +1,13 @@
+{
+  "name": "magnify-vanilla",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },  "author": "t5a1r1ou",
+  "license": "MIT"
+}

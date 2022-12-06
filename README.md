@@ -1,0 +1,1 @@
+# Magnify-vanilla-js
