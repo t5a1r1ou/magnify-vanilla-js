@@ -1,16 +1,12 @@
-type Props = {
-    originImage: HTMLImageElement;
-    zoomImage?: HTMLImageElement;
-    options?: {
-        pc?: Options;
-        sp?: Options;
-    };
-};
-
-type Options = {
+type Option = {
     width: number;
     height: number;
     scale: number;
+};
+
+type Options = {
+    pc: Option;
+    sp: Option;
 };
 
 class Magnify {
@@ -19,11 +15,11 @@ class Magnify {
     zoomImage: HTMLImageElement | undefined;
     isVisible: Boolean;
     options: Options | undefined;
-    optionsPc: Options;
-    optionsSp: Options;
+    optionsPc: Option;
+    optionsSp: Option;
     blowupLens: HTMLElement | undefined;
     mediaQuery: MediaQueryList | undefined;
-    constructor({ originImage, zoomImage = undefined, options = undefined }: Props) {
+    constructor({ originImage, zoomImage = undefined, options = undefined }: Pick<Magnify, 'originImage' | 'zoomImage' | 'options'>) {
         this.originImage = originImage;
         this.zoomImage = zoomImage;
         this.nativeImg = new Image();
